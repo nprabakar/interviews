@@ -11,17 +11,18 @@ TODO Examine the failing test case for this class.
 */
 public class Exercise3 {
 
+	/** changed code to return same hashcode for same ids as that will not let same object to be added in the set again**/
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+		
 		private Integer id;
 		
 		public Person(int newId) {
 			id = newId;
 		}
-		
+		/** return hashcode to be same for same id**/
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
